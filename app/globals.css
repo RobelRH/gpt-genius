@@ -224,7 +224,7 @@
   }
 
   .home-heading {
-    @apply bg-[#232627] text-4xl max-w-[500px] flex-wrap text-center text-white shadow-sm;
+    @apply bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text text-4xl max-w-[500px] flex-wrap text-center shadow-lg;
   }
 
   /* Credits Page */
