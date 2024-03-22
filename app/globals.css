@@ -220,11 +220,11 @@
 
   /* Home Page */
   .home {
-    @apply  sm:flex-center hidden h-72 flex-col gap-4 rounded-[20px] shadow-inner;
+    @apply  sm:flex-center hidden h-48 flex-col gap-4 rounded-[20px] shadow-inner;
   }
 
   .home-heading {
-    @apply bg-[#232627] h1-semibold max-w-[500px] flex-wrap text-center text-white shadow-sm;
+    @apply bg-[#232627] text-4xl max-w-[500px] flex-wrap text-center text-white shadow-sm;
   }
 
   /* Credits Page */
@@ -268,7 +268,7 @@
   }
 
   .collection-list {
-    @apply grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3;
+    @apply grid grid-cols-1 gap-1 sm:grid-cols-2 xl:grid-cols-3;
   }
 
   .collection-empty {
@@ -332,7 +332,7 @@
   }
 
   .sidebar-link {
-    @apply flex size-full gap-4 p-4 text-white;
+    @apply flex size-full gap-4 p-4 text-base text-white;
   }
 
   /* TransformationForm Component */
@@ -373,4 +373,39 @@
   font-size: 16px;
   font-weight: 600;
   color: #384262;
+}
+
+.hover-zoom {
+  transition: transform 0.2s ease;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  padding: 1px; /* Add padding for spacing */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.2s ease;
+}
+
+.overlay-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Position items at start and end */
+  width: 100%; /* Occupy full width */
+  color: #ffffff; /* Text color */
+}
+
+/* Show overlay on hover */
+.image-container:hover .overlay {
+  opacity: 1;
 }

@@ -27,12 +27,12 @@ const Home = async ({ searchParams } : SearchParamProps  ) => {
               <Link
                 key={link.route}
                 href={link.route}
-                className='flex-center flex-row gap-1 bg-[#343839] p-3 rounded-lg hover:bg-[#141718]'
+                className='flex-center flex-row gap-2 bg-[#343839] p-3 rounded-lg hover:bg-[#141718]'
               >
                 <li className='flex-center w-fit'>
-                  <Image src={link.icon} alt="image" width={24} height={24} />
+                  <Image src={link.icon} alt="image" width={18} height={18} />
                 </li>
-                <li className='p-14-medium text-center text-white'>
+                <li className='text-sm text-center text-white'>
                   <p>{link.label}</p>
                 </li>
               </Link>
@@ -41,7 +41,7 @@ const Home = async ({ searchParams } : SearchParamProps  ) => {
         </ul>
       </section>
 
-      <section className='sm:mt-12'>
+      <section className='sm:mt-1'>
           <Collection
            hasSearch={true}
            images={images?.data} 

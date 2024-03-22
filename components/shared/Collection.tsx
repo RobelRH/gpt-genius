@@ -98,32 +98,34 @@ export const Collection = ({
 const Card = ({ image }: { image: IImage }) => {
   return (
     <li>
-      {/* EDITED ... 02 */}
-      <Link href={`/transform/${"123"}`} className="collection-card">
-        <CldImage
-          src={image.publicId}
-          alt={image.title}
-          width={image.width}
-          height={image.height}
-          {...image.config}
-          loading="lazy"
-          className="h-52 w-full rounded-[10px] object-cover"
-          sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
-        />
-        <div className="flex-between">
-          <p className="p-20-semibold mr-3 line-clamp-1 text-white">
-            {image.title}
-          </p>
-          <Image
-            src={`/assets/icons/${
-              transformationTypes[
-                image.transformationType as TransformationTypeKey
-              ].icon
-            }`}
+      <Link href={`/transform/${"123"}`}>
+        <div className="relative hover-zoom image-container">
+          <CldImage
+            src={image.publicId}
             alt={image.title}
-            width={24}
-            height={24}
+            width={image.width}
+            height={image.height}
+            {...image.config}
+            loading="lazy"
+            className="cld-image relative block rounded-lg shadow-lg h-52 w-full object-cover"
+            sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
           />
+          <div className="overlay">
+            <div className="overlay-content px-5">
+              <Image
+                src={`/assets/icons/${transformationTypes[
+                  image.transformationType as TransformationTypeKey
+                ].icon
+                  }`}
+                alt={image.title}
+                width={24}
+                height={24}
+              />
+              <p className=" mr-3 line-clamp-1 text-white">
+                {image.title}
+              </p>
+            </div>
+          </div>
         </div>
       </Link>
     </li>

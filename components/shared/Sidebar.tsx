@@ -37,7 +37,7 @@ const Sidebar = () => {
                         height={20}
                         className={`${isActive} && 'brightness-200' bg-orange-700 text-green-500`}
                       /> */}
-                      <LayoutDashboard color='green' />
+                      <Code color='blue' />
                       {link.label}
                     </Link>
                   </li>
