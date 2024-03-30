@@ -57,7 +57,7 @@ export const Collection = ({
         <ul className="collection-list">
           {images.map((image) => (
             // EDITED --- 01
-            <Card image={image} key={"123"} />
+            <Card image={image} key={image._id} />
           ))}
         </ul>
       ) : (
@@ -98,7 +98,7 @@ export const Collection = ({
 const Card = ({ image }: { image: IImage }) => {
   return (
     <li>
-      <Link href={`/transform/${"123"}`}>
+      <Link href={`/transform/${image._id}`} className="collection-card">
         <div className="relative hover-zoom image-container">
           <CldImage
             src={image.publicId}
